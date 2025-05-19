@@ -1,0 +1,160 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](fg:color7l bg:background)\
+$os\
+$time\
+[](fg:color7l bg:color6l)\
+$username\
+$hostname\
+[](fg:color6l bg:color5d)\
+$git_branch\
+$git_status\
+$git_commit\
+[](fg:color5d bg:color4d)\
+$directory\
+[](fg:color4d bg:background)\
+\n$status$character"""
+
+add_newline = true
+
+palette = "indigos"
+
+# Define Dracula color palette
+[palettes.dracula]
+background = "#282a36"
+current_line = "#44475a"
+comment = "#6272a4"
+foreground = "#f8f8f2"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
+indigo = "#5d36c9"
+
+[palettes.indigos]
+background = "#282a36"
+current_line = "#44475a"
+comment = "#6272a4"
+foreground = "#f8f8f2"
+white = "#ffffff"
+black = "#000000"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
+indigo = "#5d36c9"
+# https://icolorpalette.com/color/5632ba
+color1d = "#130b28"
+color2d = "#251650"
+color3d = "#382079"
+color4d = "#4a2ba1"
+color5d = "#5d36c9"
+color6l = "#7d5ed4"
+color7l = "#9e86df"
+color8l = "#beafe9"
+color9l = "#dfd7f4"
+
+# Modules
+[directory]
+read_only = "󰌾"
+read_only_style = "fg:color9l bg:color4d"
+style = "fg:color8l bg:color4d"
+#repo_root_style = "bold bg:purple"
+format = "[ $path[$read_only]($read_only_style) ]($style)"
+truncation_length = 100
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[git_branch]
+symbol = " "
+style = "fg:color8l bg:color5d"
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+
+[git_commit]
+disabled = false
+style = "fg:color8l bg:color5d"
+tag_symbol = '  '
+
+[git_status]
+style = "fg:color8l bg:color5d"
+format = '[$all_status$ahead_behind ]($style)'
+
+[hostname]
+disabled = false
+ssh_only = true
+style = "fg:background bg:color6l"
+format = "[@$ssh_symbol$hostname ]($style)"
+
+[os]
+disabled = false
+style = "fg:background bg:color7l"
+format = "[[$symbol](fg:white bg:color7l)]($style)"
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[status]
+disabled = false
+map_symbol = true
+
+[time]
+disabled = false
+time_format = "%R"                 # Hour:Minute Format
+style = "fg:background bg:color7l"
+format = '[ $time ]($style)'
+
+[username]
+style_user = "fg:background bg:color6l"
+style_root = "fg:foreground bg:color6l"
+format = "[ $user]($style)"

@@ -1,0 +1,6 @@
+-v
+--target=~/
+--dotfiles
+--ignore=.stowrc
+--ignore=README.md
+
