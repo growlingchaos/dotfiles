@@ -1,0 +1,26 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias eza="eza --icons --hyperlink --group-directories-first --git -F --time-style=long-iso"
+alias find="fd"
+alias grep="rg"
+alias less="most"
+alias ls="eza"
+alias l="ls"
+alias ll="ls -l"
+alias v="nvim"
+
+export MANPAGER="nvim +Man!"
+export PS1='\n\[\e[36m\]\u@\h \[\e[35m\]\w\[\e[0m\]\n\$ '
+export PAGER=bat
+export EDITOR=nvim
+
+export M2_HOME=/opt/maven
+
+eval "$(fzf --bash)"
+eval "$(starship init bash)"
+eval "$(zoxide init --cmd cd bash)"
