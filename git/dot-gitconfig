@@ -19,16 +19,15 @@
   prompt = false
 
 [difftool "difft"]
-  cmd = /usr/bin/difft
+  cmd = /usr/bin/difft $LOCAL $REMOTE
 
 [merge]
-	tool = intellij
+	tool = nvimdiff
 
 [mergetool]
   prompt = false
   keepBackup = false
 
-[mergetool "intellij"]
-  cmd = /home/gpavan/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea.sh merge “$LOCAL” “$REMOTE” “$BASE” “$MERGED”
-  trustExitCode = true
+[mergetool "nvimdiff"]
+  layout = "LOCAL,BASE,REMOTE / MERGED"
 
