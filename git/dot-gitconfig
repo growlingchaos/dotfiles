@@ -6,6 +6,20 @@
 
 [user]
 	name = growlingchaos
+  email = growlingchaos@gmail.com
+
+[rebase]
+  autosquash = true
+  updateRefs = true
+
+[diff]
+  tool = difft
+
+[difftool]
+  prompt = false
+
+[difftool "difft"]
+  cmd = /usr/bin/difft
 
 [merge]
 	tool = intellij
@@ -15,6 +29,6 @@
   keepBackup = false
 
 [mergetool "intellij"]
-  cmd = '/home/gpavan/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin' merge “$LOCAL” “$REMOTE” “$BASE” “$MERGED”
+  cmd = /home/gpavan/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea.sh merge “$LOCAL” “$REMOTE” “$BASE” “$MERGED”
   trustExitCode = true
 
